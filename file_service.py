@@ -1,5 +1,6 @@
 import os
 
+
 def get_info_file(file_path: str) -> dict:
 
     if not os.path.isfile(file_path):
