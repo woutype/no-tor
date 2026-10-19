@@ -13,3 +13,19 @@ def get_info_file(file_path: str) -> dict:
         "name": file_name,
         "size": file_size,
     }
+
+
+def format_file_size(size_bytes: int) -> str:
+    size_bytes = float(size_bytes)
+
+    units = ["B", "KB", "MB", "GB", "TB"]
+
+    for unit in units:
+        if size_bytes >= 1024:
+            size_bytes /= 1024
+        else:
+            if unit == 'B':
+                return f"{int(size_bytes)} {unit}"
+            return f"{size_bytes:.1f} {unit}"
+
+    return f"{size_bytes:.1f} {units[-1]}"
