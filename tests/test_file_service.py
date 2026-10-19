@@ -1,4 +1,5 @@
 from file_service import get_info_file
+import pytest
 
 
 def test_get_info_file_success(tmp_path):
@@ -10,3 +11,8 @@ def test_get_info_file_success(tmp_path):
 
     assert result["name"] == "test.txt"
     assert result["size"] == 11
+
+
+def test_get_info_file_not_found():
+    with pytest.raises(FileNotFoundError):
+        get_info_file("file.txt")
