@@ -1,12 +1,32 @@
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Request
 from fastapi.responses import FileResponse
+from fastapi.staticfiles import StaticFiles
+from fastapi.templating import Jinja2Templates
 
 app = FastAPI()
-active_share = {}
+app.mount("/static", StaticFiles(directory="static"), name="static")
+templates = Jinja2Templates(directory="templates")
+
+active_share = {
+    "file_name": "archive_source.tar.gz",
+    "file_size": "24.5 GB",
+    "token": "8f3b2a3f",
+}
 
 @app.get('/')
-def read_root():
-    return {'status': 'ok'}
+def read_root(request: Request):
+    download_url = f"http://127.0.0.1:8080/dl/{active_share.get('token', '')}"
+
+    return templates.TemplateResponse(
+        request=request,
+        name='download.html',
+        context={
+            "file_name": active_share.get('file_name'),
+            "file_size": active_share.get("file_size", "0 B"),
+            "token": active_share.get("token", ""),
+            "download_url": download_url,
+        }
+    )
 
 
 @app.get('/dl/{token}')
