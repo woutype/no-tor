@@ -2,6 +2,7 @@ from file_service import (
     get_info_file,
     format_file_size,
     generate_token,
+    prepare_share,
 )
 import pytest
 
@@ -36,3 +37,15 @@ def test_generate_token():
 
     assert token1 != token2
     assert len(token1) == 32
+
+
+def test_prepare_share(tmp_path):
+    test_file = tmp_path / "archive.zip"
+    test_file.write_text("12345")
+
+    share = prepare_share(str(test_file))
+
+    assert share["file_name"] == "archive.zip"
+    assert share["file_size"] == "5 B"
+    assert len(share["token"]) == 32
+    assert share["file_path"] == str(test_file.resolve())
