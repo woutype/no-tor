@@ -1,4 +1,5 @@
 import os
+import uuid
 
 
 def get_info_file(file_path: str) -> dict:
@@ -29,3 +30,7 @@ def format_file_size(size_bytes: int) -> str:
             return f"{size_bytes:.1f} {unit}"
 
     return f"{size_bytes:.1f} {units[-1]}"
+
+
+def generate_token() -> str:
+    return uuid.uuid4().hex
