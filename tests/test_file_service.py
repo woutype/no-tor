@@ -1,4 +1,4 @@
-from file_service import get_info_file
+from file_service import get_info_file, format_file_size
 import pytest
 
 
@@ -16,3 +16,11 @@ def test_get_info_file_success(tmp_path):
 def test_get_info_file_not_found():
     with pytest.raises(FileNotFoundError):
         get_info_file("file.txt")
+
+
+def test_format_file_size():
+    assert format_file_size(0) == "0 B"
+    assert format_file_size(500) == "500 B"
+    assert format_file_size(1024) == "1.0 KB"
+    assert format_file_size(1024 * 1024) == "1.0 MB"
+    assert format_file_size(1024 * 1024 * 1024) == "1.0 GB"
