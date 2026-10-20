@@ -179,20 +179,34 @@ body {
     align-items: center;
     gap: 6px;
     cursor: pointer;
-    padding: 4px 8px;
-    border-radius: 6px;
-    transition: color 0.2s, background 0.2s;
+    padding: 2px 4px;
+    transition: all 0.2s ease;
 }
 
 .copy-btn:hover {
     color: rgb(255, 255, 255);
-    background: rgba(255, 255, 255, 0.06);
+}
+
+.copy-btn:hover .copy-icon {
+    opacity: 1;
+}
+
+.copy-btn.copied {
+    color: rgb(34, 197, 94);
+    text-shadow: 0 0 10px rgba(34, 197, 94, 0.5);
+}
+
+.copy-btn.copied .copy-icon {
+    opacity: 1;
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 6px rgb(34, 197, 94));
 }
 
 .copy-icon {
     width: 14px;
     height: 14px;
-    opacity: 0.8;
+    opacity: 0.75;
+    transition: all 0.2s ease;
 }
 
 .terminal-box {
