@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>No-Tor | Download</title>
+</head>
+<body>
+    <div class="container">
+        <div class="card">
+            <header class="card-header">
+                <span class="status-dot"></span>
+                <span class="brand-title">No-Tor | P2P-Host</span>
+            </header>
+            <div class="file-icon-container">
+                <img src="/static/file.svg" alt="File" class="file-icon">
+            </div>
+
+            <h1 class="file-name">{{ file_name }}</h1>
+
+            <div class="badges-row">
+                <span class="badge badge-size">{{ file_size }}</span>
+                <span class="badge badge-resume">
+                    <span class="resume-dot"></span>
+                    Resume Supported
+                </span>
+            </div>
+            <a href="/dl/{{ token }}" class="download-btn">
+                <span>Download</span>
+                <img src="/static/download.svg" alt="Download" class="btn-icon">
+            </a>
+
+            <div class="terminal-section">
+                <div class="terminal-header">
+                    <span>Download via Terminal</span>
+                    <button type="button" class="copy-btn">
+                        <span>Copy</span>
+                        <img src="/static/copy.svg" alt="Copy" class="copy-icon">
+                    </button>
+                </div>
+                <div class="terminal-box">
+                    <code id="curl-cmd">curl -C - -O -L "{{ download_url }}"</code>
+                </div>
+            </div>
+            <footer class="card-footer">
+                <span class="p2p-dot"></span>
+                <span class="footer-text">P2P Stream active (Direct from host)</span>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>
