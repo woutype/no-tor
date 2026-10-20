@@ -34,3 +34,16 @@ def format_file_size(size_bytes: int) -> str:
 
 def generate_token() -> str:
     return uuid.uuid4().hex
+
+
+def prepare_share(file_path: str) -> dict:
+    info = get_info_file(file_path)
+    size_formatted = format_file_size(info["size"])
+    token = generate_token()
+
+    return {
+        "file_path": os.path.abspath(file_path),
+        "file_name": info["name"],
+        "file_size": size_formatted,
+        "token": token,
+    }
