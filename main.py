@@ -3,14 +3,16 @@ from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
 
+from file_service import generate_token
+
 app = FastAPI()
 app.mount("/static", StaticFiles(directory="static"), name="static")
 templates = Jinja2Templates(directory="templates")
 
 active_share = {
-    "file_name": "archive_source.tar.gz",
+    "file_name": "info.txt",
     "file_size": "24.5 GB",
-    "token": "8f3b2a3f",
+    "token": generate_token(),
 }
 
 @app.get('/')
