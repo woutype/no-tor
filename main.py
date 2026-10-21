@@ -19,8 +19,8 @@ def read_root(request: Request):
     )
 
 
-@app.get('/dl/{token}')
-def download_file(token: str):
+@app.get('/dl/{token}/{filename}')
+def download_file(token: str, filename: str):
     if token != share.get('token'):
         raise HTTPException(status_code=404, detail="File not found")
 

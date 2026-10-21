@@ -14,7 +14,7 @@
             </div>
             <div class="file-info">
                 <span class="file-name">Name: {{ file_name }}</span>
-                <span class="file-bytes">{{ file_bytes_formatted }} • {{ file_bytes }} bytes</span>
+                <span class="file-bytes">Size: {{ file_bytes_formatted }} • {{ file_bytes }} bytes</span>
             </div>
         </div>
         <div class="card-middle">
@@ -28,7 +28,7 @@
             </div>
         </div>
         <div class="card-bottom">
-            <a href="/dl/{{ token }}" class="download-btn">
+            <a href="/dl/{{ token }}/{{ file_name }}" class="download-btn">
                 <img src="/static/download.svg" alt="Download" class="download-icon">
                 <span class="start">START DOWNLOADING</span>
             </a>
