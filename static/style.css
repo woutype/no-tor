@@ -1,0 +1,189 @@
+/* MAIN FONT */
+@import url('https://fonts.googleapis.com/css2?family=Sniglet:wght@400;800&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: RGB(12, 13, 14);
+    background: radial-gradient(circle, rgba(12, 13, 14, 1) 0%, rgba(33, 35, 43, 1) 100%);
+    color: rgb(255, 255, 255);
+    font-family: "Sniglet", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 18px;
+}
+
+.card {
+    background: rgb(20, 22, 26);
+    border: 1px solid rgb(33, 35, 43);
+    border-radius: 25px;
+    width: 100%;
+    max-width: 520px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    filter: drop-shadow(0 0 52px rgba(0, 0, 0, 0.4));
+    animation: FadeIn 1s ease-in-out backwards;
+}
+
+@keyframes FadeIn {
+    0% {
+        transform: translateY(12px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.card-top {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.icon-border {
+    border: 1px solid rgb(33, 35, 43);
+    background: rgb(20, 22, 26);
+    padding: 6px;
+    border-radius: 12px;
+    width: 62px;
+    height: 62px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.file-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    animation: Pulse 2s infinite ease-in-out;
+}
+
+@keyframes Pulse {
+    0%, 100% {
+        scale: 1;
+        transform: scaleX(1) scaleY(1);
+    }
+    50% {
+        transform: scaleX(1.05) scaleY(0.95);
+    }
+}
+
+.file-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-middle {
+    display: flex;
+    flex-direction: column;
+    background: rgb(12, 13, 14);
+    padding: 16px;
+    border-radius: 8px;
+    border: 1px solid rgb(33, 35, 43);
+    gap: 8px;
+}
+
+.transfer-mode, .supports-resuming {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.left-text {
+    font-size: 16px;
+    color: rgb(143, 146, 178);
+}
+
+.right-text {
+    font-size: 16px;
+}
+
+.card-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.download-btn {
+    width: 100%;
+    height: 56px;
+    background: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    border-radius: 28px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.download-btn:active {
+    scale: 0.96;
+}
+
+.download-btn:hover {
+    transform: translateY(-2px);
+}
+
+.copy-btn {
+    width: 100%;
+    height: 56px;
+    background: rgba(0, 0, 0, 0.1);
+    border: 1px solid rgb(33, 35, 43);
+    border-radius: 28px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    opacity: 0.5;
+    transition: all 0.2s ease;
+}
+
+.copy-btn:hover {
+    opacity: 0.8;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgb(29, 31, 38);
+}
+
+.copy-icon {
+    margin-bottom: 2px;
+}
+
+.copy {
+    font-size: 18px;
+    color: rgb(255, 255, 255);
+    font-family: "Sniglet", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.download-icon {
+    width: 32px;
+    height: 32px;
+    margin-bottom: 2px;
+}
+
+.start {
+    font-size: 28px;
+}

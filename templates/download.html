@@ -4,8 +4,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>No-Tor | Download</title>
+    <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
-
+    <div class="card">
+        <div class="card-top">
+            <div class="icon-border">
+                <img src="/static/{{ file_icon }}.svg" alt="File" class="file-icon">
+            </div>
+            <div class="file-info">
+                <span class="file-name">{{ file_name }}</span>
+                <span class="file-bytes">{{ file_bytes_formatted }} ({{ file_bytes }} bytes)</span>
+            </div>
+        </div>
+        <div class="card-middle">
+            <div class="transfer-mode">
+                <span class="left-text">Transfer mode: </span>
+                <span class="right-text">P2P Direct Streaming</span>
+            </div>
+            <div class="supports-resuming">
+                <span class="left-text">Supports resuming: </span>
+                <span class="right-text">RFC 7233 (Active)</span>
+            </div>
+        </div>
+        <div class="card-bottom">
+            <a href="/dl/{{ token }}" class="download-btn">
+                <img src="/static/download.svg" alt="Download" class="download-icon">
+                <span class="start">START DOWNLOADING</span>
+            </a>
+            <button type="button" class="copy-btn">
+                <img src="/static/copy.svg" alt="Download" class="copy-icon">
+                <span class="copy">Copy command for terminal</span>
+            </button>
+        </div>
+    </div>
 </body>
 </html>

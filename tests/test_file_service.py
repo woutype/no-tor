@@ -3,6 +3,7 @@ from file_service import (
     format_file_size,
     generate_token,
     prepare_share,
+    get_file_icon,
 )
 import pytest
 
@@ -49,3 +50,12 @@ def test_prepare_share(tmp_path):
     assert share["file_size"] == "5 B"
     assert len(share["token"]) == 32
     assert share["file_path"] == str(test_file.resolve())
+    assert share["file_icon"] == "zip"
+
+
+def test_get_file_icon():
+    assert get_file_icon("document.pdf") == "pdf"
+    assert get_file_icon("archive.tar.gz") == "zip"
+    assert get_file_icon("PHOTO.PNG") == "png"
+    assert get_file_icon("script.py") == "file"
+    assert get_file_icon("no_extension") == "file"

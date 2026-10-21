@@ -3,7 +3,6 @@ import uuid
 
 
 def get_info_file(file_path: str) -> dict:
-
     if not os.path.isfile(file_path):
         raise FileNotFoundError(f"File not found: {file_path}")
 
@@ -46,4 +45,27 @@ def prepare_share(file_path: str) -> dict:
         "file_name": info["name"],
         "file_size": size_formatted,
         "token": token,
+        "file_icon": get_file_icon(file_path),
     }
+
+def get_file_icon(file_name: str) -> str:
+    extension = file_name.lower().split(".")[-1] if '.' in file_name else ''
+
+    icons = {
+        'zip': 'zip',
+        'rar': 'zip',
+        '7z': 'zip',
+        'tar': 'zip',
+        'gz': 'zip',
+        'png': 'png',
+        'jpg': 'jpg',
+        'jpeg': 'jpg',
+        'pdf': 'pdf',
+        'docx': 'docx',
+        'doc': 'docx',
+        'txt': 'txt',
+        'md': 'txt',
+        'log': 'txt',
+    }
+
+    return icons.get(extension, 'file')
