@@ -8,7 +8,7 @@ app = FastAPI()
 app.mount("/static", StaticFiles(directory="static"), name="static")
 templates = Jinja2Templates(directory="templates")
 
-share = prepare_share('/home/woutype/Documents/CODING/no-tor/requirements.txt')
+share = prepare_share('requirements.txt')
 
 @app.get('/')
 def read_root(request: Request):

@@ -1,5 +1,7 @@
 import os
 import uuid
+import tempfile
+import shutil
 
 
 def get_info_file(file_path: str) -> dict:
@@ -36,6 +38,12 @@ def generate_token() -> str:
 
 
 def prepare_share(file_path: str) -> dict:
+    if os.path.isdir(file_path):
+        file_path = zip_folder(file_path)
+        is_temp = True
+    else:
+        is_temp = False
+
     info = get_info_file(file_path)
     size_formatted = format_file_size(info["size"])
 
@@ -47,6 +55,7 @@ def prepare_share(file_path: str) -> dict:
         "file_bytes": info["size"],
         "file_icon": get_file_icon(info["name"]),
         "token": generate_token(),
+        "is_temp": is_temp,
     }
 
 
@@ -71,3 +80,15 @@ def get_file_icon(file_name: str) -> str:
     }
 
     return icons.get(extension, 'file')
+
+
+def zip_folder(folder_path: str) -> str:
+    if not os.path.isdir(folder_path):
+        raise NotADirectoryError(f"Directory not found: {folder_path}")
+
+    folder_name = os.path.basename(os.path.abspath(folder_path))
+    archive = os.path.join(tempfile.gettempdir(), folder_name)
+
+    return shutil.make_archive(base_name=archive, format='zip', root_dir=folder_path)
+
+
