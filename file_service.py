@@ -38,15 +38,17 @@ def generate_token() -> str:
 def prepare_share(file_path: str) -> dict:
     info = get_info_file(file_path)
     size_formatted = format_file_size(info["size"])
-    token = generate_token()
 
     return {
         "file_path": os.path.abspath(file_path),
         "file_name": info["name"],
         "file_size": size_formatted,
-        "token": token,
-        "file_icon": get_file_icon(file_path),
+        "file_bytes_formatted": size_formatted,
+        "file_bytes": info["size"],
+        "file_icon": get_file_icon(info["name"]),
+        "token": generate_token(),
     }
+
 
 def get_file_icon(file_name: str) -> str:
     extension = file_name.lower().split(".")[-1] if '.' in file_name else ''
