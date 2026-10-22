@@ -14,7 +14,7 @@ share = prepare_share('requirements.txt')
 def read_root(request: Request):
     return templates.TemplateResponse(
         request=request,
-        name='download.html',
+        name='sender.html',
         context=share,
     )
 

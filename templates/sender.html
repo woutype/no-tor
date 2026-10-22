@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>No-Tor | Send </title>
+    <link rel="stylesheet" href="/static/base.css">
+    <link rel="stylesheet" href="/static/sender.css">
+</head>
+<body>
+    <div class="content">
+        <div class="active">
+            <div class="active-circle"></div>
+            <span class="active-text">ACTIVE</span>
+        </div>
+        <div class="card">
+            <input type="file" class="hidden" id="input-file">
+            <label for="input-file" class="label-input">
+                <img src="/static/icons/upload.svg" alt="Upload" class="upload-icon">
+                <span class="label-text">Click here and select the file or folder</span>
+            </label>
+
+            {# TODO: Uploaded files #}
+
+            <button type="button" class="start-btn">
+                <img src="/static/icons/energy.svg" alt="Start" class="energy">
+                <span class="start-sharing">START SHARING</span>
+            </button>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,26 @@
+/* MAIN FONT */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: RGB(12, 13, 14);
+    background: radial-gradient(circle, rgba(12, 13, 14, 1) 0%, rgba(33, 35, 43, 1) 100%);
+    color: rgb(255, 255, 255);
+    font-family: 'Outfit', sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 18px;
+}
+
+.hidden {
+    display: none !important;
+}

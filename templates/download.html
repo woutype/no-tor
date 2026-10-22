@@ -4,17 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>No-Tor | Download</title>
-    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="/static/base.css">
+    <link rel="stylesheet" href="/static/download.css">
 </head>
 <body>
     <div class="card">
         <div class="card-top">
             <div class="icon-border">
-                <img src="/static/{{ file_icon }}.svg" alt="File" class="file-icon">
+                <img src="/static/icons/{{ file_icon }}.svg" alt="File" class="file-icon">
             </div>
             <div class="file-info">
-                <span class="file-name">Name: {{ file_name }}</span>
-                <span class="file-bytes">Size: {{ file_bytes_formatted }} • {{ file_bytes }} bytes</span>
+                <span class="file-name">{{ file_name }}</span>
+                <span class="file-bytes">{{ file_bytes_formatted }} • {{ file_bytes }} bytes</span>
             </div>
         </div>
         <div class="card-middle">
@@ -29,16 +30,16 @@
         </div>
         <div class="card-bottom">
             <a href="/dl/{{ token }}/{{ file_name }}" class="download-btn">
-                <img src="/static/download.svg" alt="Download" class="download-icon">
+                <img src="/static/icons/download.svg" alt="Download" class="download-icon">
                 <span class="start">START DOWNLOADING</span>
             </a>
             <button type="button" class="copy-btn">
-                <img src="/static/copy.svg" alt="Download" class="copy-icon">
+                <img src="/static/icons/copy.svg" alt="Download" class="copy-icon">
                 <span class="copy">Copy command for terminal</span>
             </button>
         </div>
     </div>
 
-    <script src="/static/script.js"></script>
+    <script src="/static/download.js"></script>
 </body>
 </html>

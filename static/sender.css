@@ -1,0 +1,126 @@
+.content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.active-circle {
+    width: 16px;
+    height: 16px;
+    border-radius: 8px;
+    background: rgb(255, 255, 255);
+    animation: Pulse 1.5s infinite ease-in-out;
+}
+
+@keyframes Pulse {
+    0% {
+        opacity: 0.4;
+        scale: 0.8;
+    }
+    50% {
+        opacity: 1;
+        scale: 1;
+    }
+    100% {
+        opacity: 0.4;
+        scale: 0.8;
+    }
+}
+
+.active {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    padding: 5px;
+    animation: FadeIn 1s ease-in-out backwards;
+}
+
+.card {
+    padding: 20px;
+    width: 100%;
+    min-width: 480px;
+    height: 100%;
+    background: rgb(20, 22, 26);
+    border: 1px solid rgb(33, 35, 43);
+    border-radius: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    flex-direction: column;
+    animation: FadeIn 1s ease-in-out backwards;
+}
+
+@keyframes FadeIn {
+    0% {
+        transform: translateY(12px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.label-input {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    min-height: 160px;
+    gap: 10px;
+    border: 4px dashed rgb(33, 35, 43);
+    background: rgb(20, 22, 26);
+    border-radius: 20px;
+    font-size: 20px;
+    opacity: 0.6;
+    transition: all 0.2s ease;
+}
+
+.label-input:hover {
+    border: 4px dashed rgb(255, 255, 255);
+    opacity: 1;
+    background: rgb(34, 35, 44);
+}
+
+.upload-icon {
+    width: 36px;
+    height: 36px;
+}
+
+.start-btn {
+    width: 100%;
+    height: 46px;
+    background: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+    border: none;
+    border-radius: 23px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 5px;
+    transition: all 0.2s ease;
+}
+
+.start-btn:active {
+    scale: 0.96;
+}
+
+.start-btn:hover {
+    transform: translateY(-2px);
+}
+
+.start-sharing {
+    font-size: 18px;
+}
+
+.energy {
+    width: 24px;
+    height: 24px;
+}
