@@ -28,3 +28,20 @@ def download_file(token: str, filename: str):
         filename=share.get('file_name'),
         path=share.get('file_path'),
     )
+
+
+@app.get('/download/{token}')
+def download_page(token: str, request: Request):
+    if token != share.get('token'):
+        raise HTTPException(status_code=404, detail="File not found")
+    
+    return templates.TemplateResponse(
+        request=request,
+        name='download.html',
+        context=share,
+    )
+
+
+if __name__ == '__main__':
+    import uvicorn
+    uvicorn.run("main:app", host="127.0.0.1", port=8080, reload=True)

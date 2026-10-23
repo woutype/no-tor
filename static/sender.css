@@ -4,12 +4,14 @@
     justify-content: center;
     align-items: center;
     gap: 10px;
+    padding: 10px;
+    width: 100%;
 }
 
 .active-circle {
-    width: 16px;
-    height: 16px;
-    border-radius: 8px;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
     background: rgb(255, 255, 255);
     animation: Pulse 1.5s infinite ease-in-out;
 }
@@ -34,24 +36,28 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
-    gap: 6px;
+    gap: 8px;
     padding: 5px;
     animation: FadeIn 1s ease-in-out backwards;
 }
 
+.active-text {
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+}
+
 .card {
-    padding: 20px;
-    width: 100%;
-    min-width: 480px;
-    height: 100%;
     background: rgb(20, 22, 26);
     border: 1px solid rgb(33, 35, 43);
-    border-radius: 30px;
+    border-radius: 25px;
+    width: 100%;
+    max-width: 580px;
+    padding: 15px;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 16px;
     flex-direction: column;
+    gap: 15px;
+    filter: drop-shadow(0 0 52px rgba(0, 0, 0, 0.4));
     animation: FadeIn 1s ease-in-out backwards;
 }
 
@@ -123,4 +129,121 @@
 .energy {
     width: 24px;
     height: 24px;
+}
+
+.link-copy {
+    display: flex;
+    flex-direction: column;
+    background: rgb(12, 13, 14);
+    border: 1px solid rgb(33, 35, 43);
+    border-radius: 24px;
+    padding: 14px 18px;
+    gap: 10px;
+    width: 100%;
+}
+
+.link-text {
+    font-size: 14px;
+    color: rgb(143, 146, 178);
+    font-weight: 500;
+} 
+
+.field-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    width: 100%;
+}
+
+.field-input {
+    background: rgb(20, 22, 26);
+    border: 1px solid rgb(33, 35, 43);
+    border-radius: 20px;
+    padding: 0 16px;
+    height: 44px;
+    display: flex;
+    flex: 1;
+    min-width: 0;
+    color: rgb(255, 255, 255);
+    font-family: inherit;
+    font-size: 14px;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.field-input:focus {
+    border-color: rgba(255, 255, 255, 0.2);
+}
+
+.field-copy-btn {
+    color: rgb(255, 255, 255);
+    width: 96px;
+    height: 44px;
+    padding: 0;
+    background: rgb(20, 22, 26);
+    border: 1px solid rgb(33, 35, 43);
+    border-radius: 22px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    transition: all 0.2s ease;
+    font-size: 14px;
+    font-family: inherit;
+    cursor: pointer;
+    flex-shrink: 0;
+}
+
+.field-copy-btn:hover {
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgb(29, 31, 38);
+    transform: translateY(-1px);
+}
+
+.field-copy-btn.copied {
+    border: 1px solid rgb(255, 255, 255);
+}
+
+.copy-icon {
+    width: 16px;
+    height: 16px;
+}
+
+.stop-btn {
+    width: 100%;
+    height: 56px;
+    background: rgba(239, 68, 68, 0.12);
+    color: rgb(239, 68, 68);
+    border: 1px solid rgb(239, 68, 68);
+    border-radius: 28px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.stop-btn:active {
+    scale: 0.96;
+}
+
+.stop-btn:hover {
+    transform: translateY(-2px);
+    background: rgba(239, 68, 68, 0.22);
+    border: 1px solid rgb(255, 90, 90);
+    color: rgb(255, 90, 90);
+}
+
+.stop-icon {
+    width: 22px;
+    height: 22px;
+}
+
+.stop-text {
+    font-size: 18px;
 }
